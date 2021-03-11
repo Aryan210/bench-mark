@@ -1,9 +1,9 @@
-package io.redgreen.benchpress.login
+package io.redgreen.benchpress.loginImagePicker.login
 
 import com.spotify.mobius.rx2.RxMobius
 import io.reactivex.ObservableTransformer
-import io.redgreen.benchpress.login.db.Repository
-import io.redgreen.benchpress.login.schedulers.AppSchedulers
+import io.redgreen.benchpress.loginImagePicker.login.db.Repository
+import io.redgreen.benchpress.loginImagePicker.login.scheduler.AppSchedulers
 
 object LoginEffectHandler {
     fun create (
@@ -16,7 +16,7 @@ object LoginEffectHandler {
             .addAction(NavigateEffect::class.java, action::navigateToHome)
             .addAction(ClearFieldsEffect::class.java, action::clearFields)
             .addAction(RetryEffect::class.java, action::retry, scheduler.main())
-            .addTransformer(SaveTokenEffect::class.java, this.saveToDb(db))
+            .addTransformer(SaveTokenEffect::class.java, saveToDb(db))
             .addTransformer(ApiCallEffect::class.java, login(api))
             .build()
     }

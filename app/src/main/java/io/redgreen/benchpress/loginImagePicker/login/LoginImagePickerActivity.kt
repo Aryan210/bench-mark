@@ -1,4 +1,4 @@
-package io.redgreen.benchpress.login
+package io.redgreen.benchpress.loginImagePicker.login
 
 import android.content.Context
 import android.content.Intent
@@ -9,13 +9,13 @@ import io.reactivex.ObservableTransformer
 import io.redgreen.benchpress.R
 import io.redgreen.benchpress.architecture.android.BaseActivity
 import io.redgreen.benchpress.architecture.android.listener.TextWatcherAdapter
-import io.redgreen.benchpress.launchpad.LaunchpadActivity
-import io.redgreen.benchpress.login.api.ApiServiceImpl
-import io.redgreen.benchpress.login.db.RepositoryImpl
-import io.redgreen.benchpress.login.schedulers.AppSchedulersImpl
+import io.redgreen.benchpress.imagepicker.ImagePickerActivity
+import io.redgreen.benchpress.loginImagePicker.login.api.ApiServiceImpl
+import io.redgreen.benchpress.loginImagePicker.login.db.RepositoryImpl
+import io.redgreen.benchpress.loginImagePicker.login.scheduler.AppSchedulersImpl
 import kotlinx.android.synthetic.main.login_activity.*
 
-class  LoginActivity : BaseActivity<LoginModel, LoginEvent, LoginEffect>(), LoginAction, LoginView {
+class  LoginImagePickerActivity : BaseActivity<LoginModel, LoginEvent, LoginEffect>(), LoginAction, LoginView {
 
     private val renderer by lazy(LazyThreadSafetyMode.NONE){
         LoginViewRenderer(this)
@@ -26,7 +26,7 @@ class  LoginActivity : BaseActivity<LoginModel, LoginEvent, LoginEffect>(), Logi
     }
 
     override fun navigateToHome() {
-        LaunchpadActivity.start(this)
+        ImagePickerActivity.start(this)
     }
 
     override fun clearFields() {
@@ -93,7 +93,7 @@ class  LoginActivity : BaseActivity<LoginModel, LoginEvent, LoginEffect>(), Logi
     }
 
     override fun updateFunction(model: LoginModel, event: LoginEvent): Next<LoginModel, LoginEffect> {
-        return LoginLogic.update(model,event)
+        return LoginLogic.update(model, event)
     }
 
     override fun render(model: LoginModel) {
@@ -106,7 +106,7 @@ class  LoginActivity : BaseActivity<LoginModel, LoginEvent, LoginEffect>(), Logi
 
     companion object {
         fun start(context: Context) {
-            context.startActivity(Intent(context, LoginActivity::class.java))
+            context.startActivity(Intent(context, LoginImagePickerActivity::class.java))
         }
     }
 }

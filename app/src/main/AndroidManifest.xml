@@ -42,6 +42,10 @@
       android:parentActivityName=".launchpad.LaunchpadActivity"
       android:label="@string/login_title" />
     <activity
+        android:name=".loginImagePicker.login.LoginImagePickerActivity"
+        android:parentActivityName=".launchpad.LaunchpadActivity"
+        android:label="@string/login_title" />
+    <activity
       android:name=".quiz.QuizActivity"
       android:parentActivityName=".launchpad.LaunchpadActivity"
       android:label="@string/quiz_title" />

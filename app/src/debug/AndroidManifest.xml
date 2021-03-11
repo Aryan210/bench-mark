@@ -24,6 +24,9 @@
       android:name=".login.LoginActivity"
       android:exported="true" />
     <activity
+      android:name=".loginImagePicker.login.LoginImagePickerActivity"
+      android:exported="true" />
+    <activity
       android:name=".quiz.QuizActivity"
       android:exported="true" />
   </application>

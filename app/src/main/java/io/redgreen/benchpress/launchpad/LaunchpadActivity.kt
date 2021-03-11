@@ -8,6 +8,7 @@ import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import io.redgreen.benchpress.R
+import io.redgreen.benchpress.loginImagePicker.login.LoginImagePickerActivity
 import io.redgreen.benchpress.bmi.BmiActivity
 import io.redgreen.benchpress.counter.CounterActivity
 import io.redgreen.benchpress.github.GitHubActivity
@@ -34,7 +35,8 @@ class LaunchpadActivity : AppCompatActivity() {
       Example(getString(R.string.bmi_title)) { context -> BmiActivity.start(context) },
       Example(getString(R.string.login_title)) { context -> LoginActivity.start(context) },
       Example(getString(R.string.image_picker_title)) { context -> ImagePickerActivity.start(context) },
-      Example(getString(R.string.quiz_title)) { context -> QuizActivity.start(context) }
+      Example(getString(R.string.quiz_title)) { context -> QuizActivity.start(context) },
+      Example("Login-ImagePicker") {context -> LoginImagePickerActivity.start(context)}
     )
   }
 

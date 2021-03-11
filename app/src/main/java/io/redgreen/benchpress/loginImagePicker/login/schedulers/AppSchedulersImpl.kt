@@ -1,4 +1,4 @@
-package io.redgreen.benchpress.login.schedulers
+package io.redgreen.benchpress.loginImagePicker.login.schedulers
 
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
